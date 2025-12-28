@@ -1,10 +1,9 @@
 // SPLASH -> APP
 setTimeout(() => {
-  document.getElementById("splash").style.display = "none";
-  document.getElementById("app").classList.remove("hidden");
+  splash.style.display = "none";
+  app.classList.remove("hidden");
 }, 3000);
 
-// ODPOWIEDZI
 const answers = [
   { q: "czy mam ruchać", a: "Tak, oczywiście." },
   { q: "czy pijemy", a: "Zawsze trzeba." },
@@ -19,12 +18,12 @@ function ask() {
   addMsg("Ty: " + input.value, "user");
   input.value = "";
 
-  const loading = addMsg("BranzGPT analizuje...", "bot");
+  const loading = addMsg("BranzGPT analizuje", "bot loading");
 
   setTimeout(() => {
     loading.remove();
 
-    let response = "Nie wiem, ale brzmi sensownie.";
+    let response = "Nie wiem, ale brzmi legitnie.";
     for (const item of answers) {
       if (text.includes(item.q)) {
         response = item.a;
@@ -39,7 +38,8 @@ function ask() {
 function addMsg(text, cls) {
   const div = document.createElement("div");
   div.className = "msg " + cls;
-  div.innerText = text;
-  document.getElementById("messages").appendChild(div);
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
   return div;
 }
