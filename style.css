@@ -1,5 +1,12 @@
-body {
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
   margin: 0;
+  height: 100%;
+  overflow: hidden; /* BLOK SCROLL */
   background: #0f0f0f;
   font-family: Arial, sans-serif;
   color: #fff;
@@ -27,7 +34,7 @@ body {
 
 #splash p {
   font-size: 20px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 /* APP */
@@ -36,7 +43,8 @@ body {
 }
 
 .chat {
-  width: 360px;
+  width: 100%;
+  max-width: 420px;
   height: 100vh;
   margin: auto;
   background: #1a1a1a;
@@ -54,7 +62,6 @@ body {
 
 .header img {
   width: 35px;
-  height: 35px;
 }
 
 .messages {
@@ -75,10 +82,23 @@ body {
   color: #81c784;
 }
 
+/* ANALIZUJE... */
+.loading::after {
+  content: "";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
 .input {
   display: flex;
-  padding: 10px;
   gap: 5px;
+  padding: 10px;
   border-top: 1px solid #333;
 }
 
@@ -87,12 +107,12 @@ input {
   padding: 10px;
   border-radius: 10px;
   border: none;
+  outline: none;
 }
 
 button {
   padding: 10px 15px;
-  border: none;
   border-radius: 10px;
+  border: none;
   background: #4fc3f7;
-  cursor: pointer;
 }
