@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BranzGPT</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <img src="logo.png" alt="BranzGPT">
+    <h1>BranzGPT</h1>
+    <p>2025</p>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="chat hidden">
+    <div class="header">
+      <img src="logo.png" alt="BranzGPT">
+      <h1>BranzGPT</h1>
+    </div>
+
+    <div id="messages" class="messages"></div>
+
+    <div class="input">
+      <input id="question" type="text" placeholder="Zadaj pytanie..." />
+      <button onclick="ask()">Wyślij</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
