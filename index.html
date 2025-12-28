@@ -2,7 +2,14 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- BLOKADA ZOOMU -->
+  <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
   <title>BranzGPT</title>
 
   <link rel="manifest" href="manifest.json">
@@ -13,9 +20,9 @@
 </head>
 <body>
 
-  <!-- SPLASH SCREEN -->
+  <!-- SPLASH -->
   <div id="splash">
-    <img src="logo.png.jpg" alt="BranzGPT">
+    <img src="logo.png.jpg">
     <h1>BranzGPT</h1>
     <p>2025</p>
   </div>
@@ -23,14 +30,14 @@
   <!-- APP -->
   <div id="app" class="chat hidden">
     <div class="header">
-      <img src="logo.png.jpg" alt="BranzGPT">
+      <img src="logo.png.jpg">
       <h1>BranzGPT</h1>
     </div>
 
     <div id="messages" class="messages"></div>
 
     <div class="input">
-      <input id="question" type="text" placeholder="Zadaj pytanie..." />
+      <input id="question" placeholder="Zadaj pytanie..." />
       <button onclick="ask()">Wyślij</button>
     </div>
   </div>
